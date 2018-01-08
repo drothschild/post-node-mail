@@ -18,4 +18,8 @@ app.post("*", async (req, res) => {
   res.send(`Email with subject: '${subject}', body: ${body}, sent to ${to}`);
 });
 
+app.get("*", (req, res) => {
+  res.send("You probably don't want to be browsing here");
+});
+
 app.listen(port);
