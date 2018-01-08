@@ -10,13 +10,13 @@ exports.send = async options => {
       pass: process.env.MAIL_PASS
     }
   };
-  console.log(smtpConfig);
   const transport = nodemailer.createTransport(smtpConfig);
 
   const mailConfig = {
     from: process.env.MAIL_FROM,
     to: options.to,
     subject: options.subject,
+    html: options.body,
     text: options.body
   };
 
